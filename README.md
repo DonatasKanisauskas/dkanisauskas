@@ -6,4 +6,5 @@ ___
 
 ## Lesson 2
  - created new React project.
+ - installed Croco and Tailwind.
 ___
