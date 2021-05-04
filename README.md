@@ -3,3 +3,7 @@
 ## Lesson 1
 Readme.md update and pull request.
 ___
+
+## Lesson 2
+ - created new React project.
+___
