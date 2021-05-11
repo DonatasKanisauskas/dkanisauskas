@@ -8,3 +8,6 @@ ___
  - created new React project.
  - installed Croco and Tailwind.
 ___
+
+## Lesson 3
+ - installed react-router-dom.
