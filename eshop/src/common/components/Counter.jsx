@@ -7,9 +7,9 @@ function Counter(){
 
     return (
         <div>
-            <button onClick={() => setCount(count - 1)}>-</button>
-            <input value={count} />
-            <button onClick={() => setCount(count + 1)}>+</button>
+            <button className="font-bold text-lg hover:text-blue-600" onClick={() => setCount(count - 1)}>-</button>
+            <input className="w-10 text-center" value={count} />
+            <button className="font-bold text-lg hover:text-blue-600" onClick={() => setCount(count + 1)}>+</button>
         </div>
     )
 }
