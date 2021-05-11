@@ -13,3 +13,4 @@ ___
  - Installed react-router-dom.
  - Added Vision and Products components.
  - React hooks introduction (Added counter).
+ - Counter buttons and input update using state hooks.
