@@ -1,10 +1,16 @@
 import NavItem from "./components/NavItem";
 
+const NavItems = [
+    {text: 'PRODUCTS', route: '/'},
+    {text: 'VISION', route: '/vision'},
+];
+
 function NavBar(){
     return <nav className="bg-gray-300">
         <ul className="flex font-semibold text-lg">
-            <NavItem text="PRODUCTS" route="/" />
-            <NavItem text="VISION" route="/vision"/>
+            {NavItems.map((item) => (
+                <NavItem {...item} />
+            ))}
         </ul>
     </nav>
 }
