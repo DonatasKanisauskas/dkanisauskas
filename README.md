@@ -5,9 +5,10 @@ Readme.md update and pull request.
 ___
 
 ## Lesson 2
- - created new React project.
- - installed Croco and Tailwind.
+ - Created new React project.
+ - Installed Croco and Tailwind.
 ___
 
 ## Lesson 3
- - installed react-router-dom.
+ - Installed react-router-dom.
+ - Added Vision and Products components.
