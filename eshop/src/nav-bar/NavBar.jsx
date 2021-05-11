@@ -1,14 +1,10 @@
-import { Link } from "react-router-dom";
+import NavItem from "./components/NavItem";
 
 function NavBar(){
     return <nav className="bg-gray-300">
         <ul className="flex font-semibold text-lg">
-            <li className="p-2 hover:text-blue-600">
-                <Link to="/">PRODUCTS</Link>
-            </li>
-            <li className="p-2 hover:text-blue-600">
-                <Link to="/vision">VISION</Link>
-            </li>
+            <NavItem text="PRODUCTS" route="/" />
+            <NavItem text="VISION" route="/vision"/>
         </ul>
     </nav>
 }
