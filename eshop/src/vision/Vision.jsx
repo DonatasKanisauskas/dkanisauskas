@@ -1,5 +1,5 @@
-function Vision(){
-    return <div>Vision</div>
+function Vision() {
+  return <div>Vision</div>;
 }
 
 export default Vision;

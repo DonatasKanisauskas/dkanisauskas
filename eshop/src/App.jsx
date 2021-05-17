@@ -6,10 +6,10 @@ import Vision from "./vision/Vision";
 function App() {
   return (
     <Router>
-    <header>
-      <NavBar />
-    </header>
-    <main className="p-10 pt-5">
+      <header>
+        <NavBar />
+      </header>
+      <main className="p-10 pt-5">
         <Switch>
           <Route path="/vision">
             <Vision />
