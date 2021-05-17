@@ -12,8 +12,9 @@ function Counter() {
     setCount((prev) => prev - 1);
   };
 
-  const inputChangeCount = (event) => {
-    setCount(parseInt(event.target.value));
+  const inputChangeCount = (e) => {
+    if (e.target.value === "") setCount(0);
+    else setCount(parseInt(e.target.value));
   };
 
   return (
