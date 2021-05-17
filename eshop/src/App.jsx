@@ -4,23 +4,23 @@ import Products from "./products/Produts";
 import Vision from "./vision/Vision";
 
 function App() {
-	return (
-		<Router>
-			<header>
-				<NavBar />
-			</header>
-			<main className="p-10 pt-5">
-				<Switch>
-					<Route path="/vision">
-						<Vision />
-					</Route>
-					<Route path="/">
-						<Products />
-					</Route>
-				</Switch>
-			</main>
-		</Router>
-	);
+  return (
+    <Router>
+      <header>
+        <NavBar />
+      </header>
+      <main className="p-10 pt-5">
+        <Switch>
+          <Route path="/vision">
+            <Vision />
+          </Route>
+          <Route path="/">
+            <Products />
+          </Route>
+        </Switch>
+      </main>
+    </Router>
+  );
 }
 
 export default App;
