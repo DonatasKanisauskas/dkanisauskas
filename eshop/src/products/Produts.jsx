@@ -14,10 +14,13 @@ function Products() {
   }, []);
 
   return (
-    <ul>
+    <ul className="flex flex-wrap">
       {products.map((product) => (
         <li className="p-3" key={product.id}>
-          {product.title}
+          <div className="bg-white border w-64 h-80 hover:shadow-lg rounded">
+            <div>{product.title}</div>
+            <div></div>
+          </div>
         </li>
       ))}
     </ul>
