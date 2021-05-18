@@ -28,3 +28,9 @@ Readme.md update and pull request.
 - Fetched products from url to productList state.
 - Displayed products from product list in cards.
 - Cards styling with Tailwind.
+- Aligned cards with flexbox.
+- Moved Product cards to new separate component ProductCard.
+- Created Component ProductPage which will display full single products info.
+- Added new Route to ProductPage.
+
+---

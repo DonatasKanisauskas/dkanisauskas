@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./nav-bar/NavBar";
+import ProductPage from "./products/components/ProductPage";
 import Products from "./products/Produts";
 import Vision from "./vision/Vision";
 
@@ -11,11 +12,17 @@ function App() {
       </header>
       <main className="p-10 pt-5">
         <Switch>
-          <Route exact path="/vision">
-            <Vision />
-          </Route>
           <Route exact path="/">
             <Products />
+          </Route>
+          <Route path="/vision">
+            <Vision />
+          </Route>
+          <Route exact path="/products">
+            <Products />
+          </Route>
+          <Route path="/products/:productId">
+            <ProductPage />
           </Route>
         </Switch>
       </main>
