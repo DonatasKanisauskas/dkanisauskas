@@ -18,6 +18,13 @@ function Products() {
       {products.map((product) => (
         <li className="p-3" key={product.id}>
           <div className="bg-white border w-64 h-80 hover:shadow-lg rounded">
+            <div className="h-3/4">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="max-h-full m-auto"
+              />
+            </div>
             <div>{product.title}</div>
             <div></div>
           </div>
