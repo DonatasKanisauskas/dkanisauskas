@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 function ProductCard({ id, image, name, price, title }) {
+  let { url } = useRouteMatch();
   return (
     <li className="p-3">
       <div className="bg-white border w-64 h-90 hover:shadow-xl p-2">
@@ -18,7 +19,7 @@ function ProductCard({ id, image, name, price, title }) {
         <div className="grid justify-items-stretch">
           <Link
             className="justify-self-center bg-gray-500 hover:bg-gray-600 w-24 text-white rounded text-center"
-            to={`/products/${id}`}
+            to={`${url}/${id}`}
           >
             VIEW
           </Link>
