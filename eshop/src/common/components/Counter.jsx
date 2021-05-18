@@ -4,36 +4,36 @@ import "./counter.css";
 function Counter() {
   const [count, setCount] = useState(1);
 
-  const increaseCount = () => {
+  const handleIncrement = () => {
     setCount((prev) => prev + 1);
   };
 
-  const decreaseCount = () => {
+  const handleDecrement = () => {
     setCount((prev) => prev - 1);
   };
 
-  const inputChangeCount = (e) => {
+  const handleInputChange = (e) => {
     if (e.target.value === "") setCount(0);
-    else setCount(parseInt(e.target.value));
+    else setCount(e.target.valueAsNumber);
   };
 
   return (
     <div className="p-5 flex justify-left">
       <button
         className="w-8 font-thin hover:bg-indigo-50 border bg-white"
-        onClick={decreaseCount}
+        onClick={handleDecrement}
       >
         -
       </button>
       <input
         className="w-20 text-center hover:bg-indigo-50 border"
         value={count}
-        onChange={inputChangeCount}
+        onChange={handleInputChange}
         type="number"
       />
       <button
         className="w-8 font-thin hover:bg-indigo-50 border bg-white"
-        onClick={increaseCount}
+        onClick={handleIncrement}
       >
         +
       </button>
