@@ -5,7 +5,7 @@ function Counter() {
   const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
-    setCount((prev) => prev + 1);
+    setCount((prev) => (prev === "" ? 0 : prev) + 1);
   };
 
   const handleDecrement = () => {
@@ -13,8 +13,12 @@ function Counter() {
   };
 
   const handleInputChange = (e) => {
-    if (e.target.value === "") setCount(0);
+    if (e.target.value === "") setCount("");
     else setCount(e.target.valueAsNumber);
+  };
+
+  const handleInputUnfocus = (e) => {
+    if (e.target.value === "") setCount(0);
   };
 
   return (
@@ -29,6 +33,7 @@ function Counter() {
         className="w-20 text-center hover:bg-indigo-50 border"
         value={count}
         onChange={handleInputChange}
+        onBlur={handleInputUnfocus}
         type="number"
       />
       <button
