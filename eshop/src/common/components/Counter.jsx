@@ -5,7 +5,7 @@ function Counter() {
   const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
-    setCount((prev) => prev + 1);
+    setCount((prev) => (prev === "" ? 0 : prev) + 1);
   };
 
   const handleDecrement = () => {
@@ -13,7 +13,7 @@ function Counter() {
   };
 
   const handleInputChange = (e) => {
-    if (e.target.value === "") setCount(0);
+    if (e.target.value === "") setCount("");
     else setCount(e.target.valueAsNumber);
   };
 

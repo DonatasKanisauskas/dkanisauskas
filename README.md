@@ -32,5 +32,6 @@ Readme.md update and pull request.
 - Moved Product cards to new separate component ProductCard.
 - Created Component ProductPage which will display full single products info.
 - Added new Route to ProductPage.
+- [Bonus] Empty counter input. (onBlur if empty set counter 0).
 
 ---
