@@ -17,10 +17,6 @@ function Counter() {
     else setCount(e.target.valueAsNumber);
   };
 
-  const handleInputUnfocus = (e) => {
-    if (e.target.value === "") setCount(0);
-  };
-
   return (
     <div className="p-5 flex justify-left">
       <button
@@ -33,7 +29,6 @@ function Counter() {
         className="w-20 text-center hover:bg-indigo-50 border"
         value={count}
         onChange={handleInputChange}
-        onBlur={handleInputUnfocus}
         type="number"
       />
       <button
