@@ -1,7 +1,7 @@
 import NavItem from "./components/NavItem";
 
 const NavItems = [
-  { text: "PRODUCTS", route: "/products" },
+  { text: "PRODUCTS", route: "/" },
   { text: "VISION", route: "/vision" },
 ];
 
