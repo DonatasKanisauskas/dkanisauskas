@@ -9,7 +9,6 @@ function Products() {
       const response = await fetch("https://fakestoreapi.com/products");
       const products = await response.json();
       setProducts(products);
-      console.log(products);
     };
 
     getProducts();
