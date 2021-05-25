@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import Button from "../../common/components/Button";
 import Card from "../../common/components/Card";
 
 function ProductCard({ id, image, name, price, title }) {
   return (
     <li className="p-3">
-      <Card className="w-64 h-90" iSRounded>
-        <div className="h-48 flex">
+      <Card className="w-64 h-90">
+        <div className="h-48 flex items-stretch">
           <img
             src={image}
             alt={name}
@@ -16,14 +16,9 @@ function ProductCard({ id, image, name, price, title }) {
           {title}
         </div>
         <div className="text-center font-semibold">{price}$</div>
-        <div className="grid justify-items-stretch pt-3 p-2">
-          <Link
-            className="justify-self-center bg-gray-500 hover:bg-gray-600 w-24 text-white rounded text-center"
-            to={`/product/${id}`}
-          >
-            VIEW
-          </Link>
-        </div>
+        <Button to={`/products/${id}`} className="flex">
+          VIEW
+        </Button>
       </Card>
     </li>
   );

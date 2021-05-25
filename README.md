@@ -42,3 +42,5 @@ Readme.md update and pull request.
 - Installed cslx.
 - Refactored Card with clsx.
 - Centered Card image.
+- Added Button component.
+- Refactored Button with clsx.
