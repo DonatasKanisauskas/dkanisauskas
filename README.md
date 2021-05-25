@@ -35,3 +35,9 @@ Readme.md update and pull request.
 - [Bonus] Empty counter input. (onBlur if empty set counter 0).
 
 ---
+
+## Lesson 5
+
+- Added Card component.
+- Installed cslx.
+- Refactored Card with clsx.
