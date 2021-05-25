@@ -45,3 +45,6 @@ Readme.md update and pull request.
 - Added Button component.
 - Refactored Button with clsx.
 - Moved products to separate component ProductCard.
+- Get productId from route.
+
+---

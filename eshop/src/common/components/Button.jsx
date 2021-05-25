@@ -2,10 +2,10 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 
 const defaultClasses =
-  "grid justify-items-stretch bg-red-50 text-center hover:bg-red-100";
+  "bg-gray-500 hover:bg-gray-600 m-2 block text-center text-white";
 
-function Button({ className, children, to }) {
-  const mergedClass = clsx(defaultClasses, className);
+function Button({ className, children, to, isRounded }) {
+  const mergedClass = clsx(defaultClasses, className, isRounded && "rounded");
   if (to) {
     return (
       <Link className={mergedClass} to={to}>

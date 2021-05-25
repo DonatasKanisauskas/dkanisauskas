@@ -2,9 +2,9 @@ import clsx from "clsx";
 
 const defaultClasses = "bg-white border hover:shadow-xl p-2";
 
-function Card({ className, children, iSRounded }) {
+function Card({ className, children, isRounded }) {
   return (
-    <div className={clsx(defaultClasses, className, iSRounded && "rounded")}>
+    <div className={clsx(defaultClasses, className, isRounded && "rounded")}>
       {children}
     </div>
   );
