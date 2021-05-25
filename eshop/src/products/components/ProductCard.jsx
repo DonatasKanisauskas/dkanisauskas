@@ -5,7 +5,7 @@ function ProductCard({ id, image, name, price, title }) {
   return (
     <li className="p-3">
       <Card className="w-64 h-90" iSRounded>
-        <div className="h-48 flex items-stretch">
+        <div className="h-48 flex">
           <img
             src={image}
             alt={name}

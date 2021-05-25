@@ -41,3 +41,4 @@ Readme.md update and pull request.
 - Added Card component.
 - Installed cslx.
 - Refactored Card with clsx.
+- Centered Card image.

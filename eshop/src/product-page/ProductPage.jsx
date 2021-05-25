@@ -15,7 +15,7 @@ function ProductPage() {
     };
 
     getProduct();
-  }, []);
+  }, [productId]);
 
   return (
     <div className="border max-w-md mx-auto bg-white shadow-md overflow-hidden md:max-w-4xl">
