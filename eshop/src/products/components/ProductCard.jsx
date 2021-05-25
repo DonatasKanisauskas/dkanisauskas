@@ -1,14 +1,14 @@
 import Button from "../../common/components/Button";
 import Card from "../../common/components/Card";
 
-function ProductCard({ id, image, name, price, title }) {
+function ProductCard({ id, image, price, title }) {
   return (
     <li className="p-3">
       <Card className="w-64 h-90">
         <div className="h-48 flex items-stretch">
           <img
             src={image}
-            alt={name}
+            alt={title}
             className="max-h-full m-auto self-center"
           />
         </div>

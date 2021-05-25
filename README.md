@@ -44,3 +44,4 @@ Readme.md update and pull request.
 - Centered Card image.
 - Added Button component.
 - Refactored Button with clsx.
+- Moved products to separate component ProductCard.
