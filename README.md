@@ -35,3 +35,16 @@ Readme.md update and pull request.
 - [Bonus] Empty counter input. (onBlur if empty set counter 0).
 
 ---
+
+## Lesson 5
+
+- Added Card component.
+- Installed cslx.
+- Refactored Card with clsx.
+- Centered Card image.
+- Added Button component.
+- Refactored Button with clsx.
+- Moved products to separate component ProductCard.
+- Get productId from route.
+
+---

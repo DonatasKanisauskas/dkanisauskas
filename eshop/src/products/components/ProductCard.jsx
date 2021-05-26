@@ -1,29 +1,32 @@
-import { Link } from "react-router-dom";
+import Button from "../../common/components/Button";
+import Card from "../../common/components/Card";
 
-function ProductCard({ id, image, name, price, title }) {
+function ProductCard({ id, image, price, title }) {
   return (
     <li className="p-3">
-      <div className="bg-white border w-64 h-90 hover:shadow-xl p-2">
+      <Card className="w-64 h-90" isRounded>
         <div className="h-48 flex items-stretch">
           <img
             src={image}
-            alt={name}
+            alt={title}
             className="max-h-full m-auto self-center"
           />
         </div>
-        <div className="text-center font-semibold mt-3">{price}$</div>
-        <div className="truncate text-center p-2" title={title}>
+        <div
+          className="truncate text-center p-2 pb-1 font-semibold"
+          title={title}
+        >
           {title}
         </div>
-        <div className="grid justify-items-stretch">
-          <Link
-            className="justify-self-center bg-gray-500 hover:bg-gray-600 w-24 text-white rounded text-center"
-            to={`/product/${id}`}
-          >
-            VIEW
-          </Link>
-        </div>
-      </div>
+        <div className="text-center font-bold">{price}$</div>
+        <Button
+          to={`/products/${id}`}
+          className="w-20 self-center mx-auto"
+          isRounded
+        >
+          VIEW
+        </Button>
+      </Card>
     </li>
   );
 }
