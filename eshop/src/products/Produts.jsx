@@ -1,20 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { getProducts } from "../common/requests";
 import ProductCard from "./components/ProductCard";
 
 function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const getProducts = async () => {
-      const { data } = await axios({
-        method: "GET",
-        url: `https://fakestoreapi.com/products`,
-      });
+    const fetchProducts = async () => {
+      const { data } = await axios(getProducts);
       setProducts(data);
     };
 
-    getProducts();
+    fetchProducts();
   }, []);
 
   return (
