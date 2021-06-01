@@ -53,3 +53,4 @@ Readme.md update and pull request.
 
 - Single product fetch API.
 - Installed Axios.
+- Refactored fecth APIs with Axios.

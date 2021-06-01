@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "./components/ProductCard";
 
@@ -6,9 +7,11 @@ function Products() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const products = await response.json();
-      setProducts(products);
+      const { data } = await axios({
+        method: "GET",
+        url: `https://fakestoreapi.com/products`,
+      });
+      setProducts(data);
     };
 
     getProducts();

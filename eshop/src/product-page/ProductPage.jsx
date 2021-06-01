@@ -1,21 +1,22 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 function ProductPage() {
-  const { productId } = useParams();
+  const { id } = useParams();
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     const getProduct = async () => {
-      const response = await fetch(
-        `https://fakestoreapi.com/products/${productId}`
-      );
-      const product = await response.json();
-      setProduct(product);
+      const { data } = await axios({
+        method: "GET",
+        url: `https://fakestoreapi.com/products/${id}`,
+      });
+      setProduct(data);
     };
 
     getProduct();
-  }, [productId]);
+  }, [id]);
 
   return (
     <div className="border max-w-md mx-auto bg-white shadow-md overflow-hidden md:max-w-4xl">
