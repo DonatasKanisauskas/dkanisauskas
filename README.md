@@ -56,3 +56,5 @@ Readme.md update and pull request.
 - Refactored fecth API with Axios.
 - Moved fetch API request info to requests.js.
 - Product page styling.
+- Enabled Tailwinds active variant.
+- Counter styling.

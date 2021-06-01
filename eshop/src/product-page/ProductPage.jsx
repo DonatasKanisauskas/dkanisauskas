@@ -31,8 +31,8 @@ function ProductPage() {
         <div className="text-3xl mb-4 font-bold">{product?.price}$</div>
         <p className="mb-4">{product?.description}</p>
         <div className="mb-2 font-semibold">Quantity</div>
-        <Counter />
-        <Button>ADD TO CART</Button>
+        <Counter className="mb-4" />
+        <Button isRounded>ADD TO CART</Button>
       </div>
     </div>
     // <div className="border max-w-md mx-auto bg-white shadow-md overflow-hidden md:max-w-4xl">
