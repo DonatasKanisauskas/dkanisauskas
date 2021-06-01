@@ -52,3 +52,4 @@ Readme.md update and pull request.
 ## Lesson 6
 
 - Single product fetch API.
+- Installed Axios.
