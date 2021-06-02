@@ -2,7 +2,10 @@ import clsx from "clsx";
 import { useState } from "react";
 import "./counter.css";
 
-const defaultClasses = "flex justify-left";
+const containerStyle = "flex justify-left";
+const mutualStyle = "hover:bg-indigo-50 border focus:outline-none";
+const buttonStyle = "w-8 font-thin bg-white active:bg-indigo-100";
+const inputStyle = "w-20 text-center focus:bg-indigo-100 focus:outline-none";
 
 function Counter({ className }) {
   const [count, setCount] = useState(1);
@@ -17,16 +20,15 @@ function Counter({ className }) {
 
   const handleInputChange = (e) => {
     if (e.target.value === "") setCount("");
-    else setCount(e.target.valueAsNumber < 1 ? 1 : e.target.valueAsNumber);
+    else {
+      if (e.target.valueAsNumber < 1) {
+        setCount(Math.abs(e.target.valueAsNumber));
+      } else setCount(e.target.valueAsNumber);
+    }
   };
 
-  const mergedClass = clsx(defaultClasses, className);
-  const mutualStyle = "hover:bg-indigo-50 border focus:outline-none";
-  const buttonStyle = "w-8 font-thin bg-white active:bg-indigo-100";
-  const inputStyle = "w-20 text-center focus:bg-indigo-100 focus:outline-none";
-
   return (
-    <div className={mergedClass}>
+    <div className={clsx(containerStyle, className)}>
       <button
         className={clsx(mutualStyle, buttonStyle)}
         onClick={handleDecrement}
