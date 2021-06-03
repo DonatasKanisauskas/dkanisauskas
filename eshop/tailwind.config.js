@@ -6,12 +6,17 @@ module.exports = {
       height: {
         '1/4': '25%',
         '1/2': '50%',
-        '3/4': '75%',
+        '3/4': '75%'
+      },
+      maxWidth: {
+        '1/2': '50%'
       }
-    },
+    }
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active']
+    },
   },
   plugins: [],
 }

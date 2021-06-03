@@ -48,3 +48,13 @@ Readme.md update and pull request.
 - Get productId from route.
 
 ---
+
+## Lesson 6
+
+- Single product fetch API.
+- Installed Axios.
+- Refactored fecth API with Axios.
+- Moved fetch API request info to requests.js.
+- Product page styling.
+- Enabled Tailwinds active variant.
+- Counter styling.
