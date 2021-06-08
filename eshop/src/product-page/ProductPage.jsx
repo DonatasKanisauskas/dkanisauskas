@@ -35,26 +35,6 @@ function ProductPage() {
         <Button isRounded>ADD TO CART</Button>
       </div>
     </div>
-    // <div className="border max-w-md mx-auto bg-white shadow-md overflow-hidden md:max-w-4xl">
-    //   <div className="md:flex p-2">
-    //     <div className="md:flex-shrink-0 border">
-    //       <Card >
-    //         <img
-    //           className="w-48 self-center m-auto"
-    //           src={product?.image}
-    //           alt={product?.title}
-    //         />
-    //       </Card>
-    //     </div>
-    //     <div className="p-8">
-    //       <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-    //         {product.title}
-    //       </div>
-    //       <p className="mt-1 text-gray-500 font-semibold">{product.price}$</p>
-    //       <p className="mt-2 text-gray-500">{product.description}</p>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 
