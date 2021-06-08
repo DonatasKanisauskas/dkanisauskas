@@ -5,6 +5,7 @@ import Card from "../common/components/Card";
 import { getProduct } from "../common/requests";
 import Counter from "../common/components/Counter";
 import Button from "../common/components/Button";
+import Spinner from "../common/components/Spinner";
 
 function ProductPage() {
   const { id } = useParams();
@@ -24,7 +25,7 @@ function ProductPage() {
   }, [id]);
 
   if (isLoading) {
-    return <div>LOADING!!!</div>;
+    return <Spinner text="Fetching product info..." />;
   }
 
   return (

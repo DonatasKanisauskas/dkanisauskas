@@ -10,7 +10,7 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <main className="p-10 pt-5">
+      <main className="p-10 pt-5" style={{ height: "calc(100vh - 44px)" }}>
         <Switch>
           <Route exact path={["/", "/products"]} component={Products} />
           <Route exact path="/vision" component={Vision} />

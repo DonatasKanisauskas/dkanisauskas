@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Spinner from "../common/components/Spinner";
 import { getProducts } from "../common/requests";
 import ProductCard from "./components/ProductCard";
 
@@ -19,7 +20,9 @@ function Products() {
     fetchProducts();
   }, []);
 
-  console.log(isLoading);
+  if (isLoading) {
+    return <Spinner text="Fetching products..." />;
+  }
 
   return (
     <div>

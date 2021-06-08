@@ -61,5 +61,7 @@ Readme.md update and pull request.
 
 ## Lesson 7
 
-- Counter button styling with tailwind
+- Counter button negative number handling.
+- Counter button styling with tailwind animations.
 - Added Loading state to Product and Products components.
+- Implemented Spinner svg
