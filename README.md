@@ -64,4 +64,5 @@ Readme.md update and pull request.
 - Counter button negative number handling.
 - Counter button styling with tailwind animations.
 - Added Loading state to Product and Products components.
+- Added style in App.jsx to fill whole screen.
 - Implemented Spinner svg
