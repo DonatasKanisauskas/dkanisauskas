@@ -7,7 +7,7 @@ const NavItems = [
 
 function NavBar() {
   return (
-    <nav className="bg-gray-300">
+    <nav className="bg-gray-400">
       <ul className="flex font-semibold text-lg">
         {NavItems.map((item) => (
           <NavItem key={item.route} {...item} />

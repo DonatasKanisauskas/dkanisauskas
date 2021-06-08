@@ -11,7 +11,7 @@ function Counter({ className }) {
   const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
-    setCount((prev) => (prev === "" ? 0 : prev) + 1);
+    setCount((prev) => (prev === "" ? 1 : prev) + 1);
   };
 
   const handleDecrement = () => {
@@ -20,11 +20,10 @@ function Counter({ className }) {
 
   const handleInputChange = (e) => {
     if (e.target.value === "") setCount("");
-    else {
-      if (e.target.valueAsNumber < 1) {
-        setCount(Math.abs(e.target.valueAsNumber));
-      } else setCount(e.target.valueAsNumber);
-    }
+    else if (e.target.valueAsNumber === 0) setCount(1);
+    else if (e.target.valueAsNumber < 1)
+      setCount(Math.abs(e.target.valueAsNumber));
+    else setCount(e.target.valueAsNumber);
   };
 
   return (
