@@ -15,7 +15,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['active']
+      backgroundColor: ['active'],
+      translate: ['active']
     },
   },
   plugins: [],

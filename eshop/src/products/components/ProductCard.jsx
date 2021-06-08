@@ -21,7 +21,7 @@ function ProductCard({ id, image, price, title }) {
         <div className="text-center font-bold">{price}$</div>
         <Button
           to={`/products/${id}`}
-          className="w-20 self-center mx-auto"
+          className="w-20 self-center bg-gray-500 hover:bg-gray-600 mx-auto m-2 px-2 py-1"
           isRounded
         >
           VIEW

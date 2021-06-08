@@ -5,15 +5,21 @@ import ProductCard from "./components/ProductCard";
 
 function Products() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setIsLoading(true);
       const { data } = await axios(getProducts);
+
+      setIsLoading(false);
       setProducts(data);
     };
 
     fetchProducts();
   }, []);
+
+  console.log(isLoading);
 
   return (
     <div>

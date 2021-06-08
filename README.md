@@ -58,3 +58,8 @@ Readme.md update and pull request.
 - Product page styling.
 - Enabled Tailwinds active variant.
 - Counter styling.
+
+## Lesson 7
+
+- Counter button styling with tailwind
+- Added Loading state to Product and Products components.

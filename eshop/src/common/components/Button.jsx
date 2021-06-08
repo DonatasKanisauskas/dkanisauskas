@@ -1,19 +1,22 @@
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 
-const defaultClasses =
-  "bg-gray-500 hover:bg-gray-600 m-2 block text-center text-white p-1 px-2 focus:outline-none";
+const defaultClasses = "block text-center text-whitefocus:outline-none";
 
-function Button({ className, children, to, isRounded }) {
+function Button({ className, children, to, isRounded, onClick }) {
   const mergedClass = clsx(defaultClasses, className, isRounded && "rounded");
   if (to) {
     return (
-      <Link className={mergedClass} to={to}>
+      <Link className={mergedClass} to={to} onClick={onClick}>
         {children}
       </Link>
     );
   }
-  return <button className={mergedClass}>{children}</button>;
+  return (
+    <button className={mergedClass} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;
