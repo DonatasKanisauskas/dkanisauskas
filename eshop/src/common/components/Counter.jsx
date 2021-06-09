@@ -1,10 +1,12 @@
 import clsx from "clsx";
 import { useState } from "react";
+import Button from "./Button";
 import "./counter.css";
 
 const containerStyle = "flex justify-left";
 const mutualStyle = "hover:bg-indigo-50 border focus:outline-none";
-const buttonStyle = "w-8 font-thin bg-white active:bg-indigo-100";
+const buttonStyle =
+  "w-8 font-thin bg-white transform hover:-translate-y-0.5 active:translate-y-0.5";
 const inputStyle = "w-20 text-center focus:bg-indigo-100 focus:outline-none";
 
 function Counter({ className }) {
@@ -19,34 +21,32 @@ function Counter({ className }) {
   };
 
   const handleInputChange = (e) => {
-    if (e.target.value === "") setCount("");
-    else if (e.target.valueAsNumber === 0) setCount(1);
-    else if (e.target.valueAsNumber < 1)
-      setCount(Math.abs(e.target.valueAsNumber));
-    else setCount(e.target.valueAsNumber);
+    const val = e.target.value;
+    const newVal = val === "" ? "" : parseInt(Math.abs(val));
+    setCount(newVal);
   };
 
   return (
     <div className={clsx(containerStyle, className)}>
-      <button
+      <Button
         className={clsx(mutualStyle, buttonStyle)}
         onClick={handleDecrement}
         disabled={count < 1}
       >
         -
-      </button>
+      </Button>
       <input
         className={clsx(mutualStyle, inputStyle)}
         value={count}
         onChange={handleInputChange}
         type="number"
       />
-      <button
+      <Button
         className={clsx(mutualStyle, buttonStyle)}
         onClick={handleIncrement}
       >
         +
-      </button>
+      </Button>
     </div>
   );
 }
