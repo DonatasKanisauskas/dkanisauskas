@@ -66,3 +66,4 @@ Readme.md update and pull request.
 - Added Loading state to Product and Products components.
 - Added style in App.jsx to fill whole screen.
 - Implemented Spinner svg
+- Loading Dots (homework)

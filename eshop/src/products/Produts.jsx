@@ -20,8 +20,8 @@ function Products() {
     fetchProducts();
   }, []);
 
-  if (isLoading) {
-    return <Spinner text="Fetching products..." />;
+  if (true) {
+    return <Spinner text="Fetching products" />;
   }
 
   return (
