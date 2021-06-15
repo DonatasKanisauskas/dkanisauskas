@@ -71,3 +71,4 @@ Readme.md update and pull request.
 ## Lesson 8
 
 - Loading dots implementation in Spinner.
+- Added className prop to Counter component.
