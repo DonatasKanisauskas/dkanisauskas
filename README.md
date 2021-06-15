@@ -74,3 +74,4 @@ Readme.md update and pull request.
 - Added className prop to Counter component.
 - Added typeClassMap to Button component.
 - Added add to Cart request.
+- Moved Counter state logic to separate hook and used that hook in Product component.
