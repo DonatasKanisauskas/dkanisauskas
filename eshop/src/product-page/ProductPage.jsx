@@ -13,23 +13,23 @@ function ProductPage() {
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const counterProps = useCounter();
+  const [isAddToCartLoading, setIsAddToCartLoading] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
       setIsLoading(true);
       const { data } = await axios(getProduct(id));
-
       setIsLoading(false);
       setProduct(data);
     };
 
     fetchProduct();
   }, [id]);
-
-  const handleAddToCartClick = () => {
-    console.log("handle add to cart", counterProps.count);
-    axios(addToCart());
-  };
+  async function handleAddToCartClick() {
+    setIsAddToCartLoading(true);
+    await axios(addToCart(id, counterProps.count));
+    setIsAddToCartLoading(false);
+  }
 
   if (isLoading) {
     return <Spinner text="Fetching product info" />;
@@ -48,8 +48,8 @@ function ProductPage() {
         <p className="mb-4">{product?.description}</p>
         <div className="mb-2 font-semibold">Quantity</div>
         <Counter className="mb-4" {...counterProps} />
-        <Button type="primary" isRounded onClick={handleAddToCartClick}>
-          ADD TO CART
+        <Button className=" m-2" type="primary" isRounded disabled={isAddToCartLoading} onClick={handleAddToCartClick}>
+          {isAddToCartLoading ? "ADDING TO CART" : "ADD TO CART"}
         </Button>
       </div>
     </div>

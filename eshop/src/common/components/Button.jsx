@@ -2,35 +2,25 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 
 const typeClassMap = {
-  default: "text-white block ",
-  primary: "text-white block bg-blue-400",
+  default: "bg-gray-500 hover:bg-gray-600 text-white",
+  primary: "bg-blue-400 hover:bg-blue-500 text-white",
+  counter: "bg-white text-black",
 };
-const initialClasses =
-  "text-center focus:outline-none text-semibold bg-gray-500 hover:bg-gray-600 m-2 px-2 py-1 focus:outline-none";
 
-function Button({
-  type = "default",
-  className,
-  children,
-  to,
-  isRounded,
-  onClick,
-}) {
-  const mergedClass = clsx(
-    initialClasses,
-    typeClassMap[type],
-    className,
-    isRounded && "rounded"
-  );
+const initialClasses = "block text-center text-semibold px-2 py-1 focus:outline-none";
+const disabledClasses = "bg-gray-300 text-gray-400 cursor-default";
+
+function Button({ type = "default", className, children, to, isRounded, onClick, disabled }) {
+  const mergedClass = clsx(initialClasses, className, isRounded && "rounded", disabled ? disabledClasses : typeClassMap[type]);
   if (to) {
     return (
-      <Link className={mergedClass} to={to} onClick={onClick}>
+      <Link className={mergedClass} to={to} onClick={onClick} disabled={disabled}>
         {children}
       </Link>
     );
   }
   return (
-    <button className={mergedClass} onClick={onClick}>
+    <button className={mergedClass} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
