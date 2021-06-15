@@ -41,10 +41,7 @@ function ProductPage() {
         <p className="mb-4">{product?.description}</p>
         <div className="mb-2 font-semibold">Quantity</div>
         <Counter className="mb-4" />
-        <Button
-          className="bg-gray-500 hover:bg-gray-600 m-2 px-2 py-1 focus:outline-none"
-          isRounded
-        >
+        <Button type="primary" isRounded>
           ADD TO CART
         </Button>
       </div>
