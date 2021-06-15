@@ -67,3 +67,7 @@ Readme.md update and pull request.
 - Added style in App.jsx to fill whole screen.
 - Implemented Spinner svg
 - Loading Dots (homework)
+
+## Lesson 8
+
+- Loading dots implementation in Spinner.
