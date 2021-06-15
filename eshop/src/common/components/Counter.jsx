@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Button from "./Button";
-import "./counter.css";
 
 const containerStyle = "flex justify-left";
 const mutualStyle = "hover:bg-indigo-50 border focus:outline-none";
