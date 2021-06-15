@@ -73,3 +73,4 @@ Readme.md update and pull request.
 - Loading dots implementation in Spinner.
 - Added className prop to Counter component.
 - Added typeClassMap to Button component.
+- Added add to Cart request.
