@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const typeClassMap = {
   default: "bg-gray-500 hover:bg-gray-600 text-white",
   primary: "bg-blue-400 hover:bg-blue-500 text-white",
-  counter: "bg-white text-black",
 };
 
 const initialClasses = "block text-center text-semibold px-2 py-1 focus:outline-none";
