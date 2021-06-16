@@ -1,19 +1,6 @@
-import { useEffect, useState } from "react";
 import { ReactComponent as SpinIcon } from "../assets/spin.svg";
 
-const dotsIntervalInMs = 300;
-
-function Spinner({ text = "Loading" }) {
-  const [dots, setDots] = useState("");
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDots((prev) => (prev === "..." ? "" : prev + "."));
-    }, dotsIntervalInMs);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
+function Spinner({ text = "Loading", dots }) {
   return (
     <div className="h-full flex flex-col justify-center items-center">
       <SpinIcon />

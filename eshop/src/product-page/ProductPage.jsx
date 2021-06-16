@@ -7,12 +7,14 @@ import Counter from "../common/components/Counter";
 import Button from "../common/components/Button";
 import Spinner from "../common/components/Spinner";
 import useCounter from "../common/hooks/useCounter";
+import useLoadingDots from "../common/hooks/useLoadingDots";
 
 function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const counterProps = useCounter();
+  const loadingDotsProps = useLoadingDots();
   const [isAddToCartLoading, setIsAddToCartLoading] = useState(false);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ function ProductPage() {
   }
 
   if (isLoading) {
-    return <Spinner text="Fetching product info" />;
+    return <Spinner text="Fetching product info" {...loadingDotsProps} />;
   }
 
   return (
