@@ -1,2 +1,12 @@
-export const getProducts = { method: "GET", url: `https://fakestoreapi.com/products` };
-export const getProduct = (id) => ({ method: "GET", url: `https://fakestoreapi.com/products/${id}` });
+const fakeStoreApiUrl = `https://fakestoreapi.com`;
+
+export const getProducts = { method: "GET", url: `${fakeStoreApiUrl}/products` };
+
+export const getProduct = (id) => ({ method: "GET", url: `${fakeStoreApiUrl}/products/${id}` });
+
+export const addToCart = (productId, quantity) => ({
+  method: "POST", url: `${fakeStoreApiUrl}/carts`, data: {
+    userId: 5,
+    products: [{ productId, quantity }]
+  }
+});

@@ -67,3 +67,13 @@ Readme.md update and pull request.
 - Added style in App.jsx to fill whole screen.
 - Implemented Spinner svg
 - Loading Dots (homework)
+
+## Lesson 8
+
+- Loading dots implementation in Spinner.
+- Added className prop to Counter component.
+- Added typeClassMap to Button component.
+- Added add to Cart request.
+- Moved Counter state logic to separate hook and used that hook in Product component.
+- Added disabled prop to Buttom component.
+- Change add to cart button loading.

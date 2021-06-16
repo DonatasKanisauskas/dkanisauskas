@@ -2,27 +2,34 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Card from "../common/components/Card";
-import { getProduct } from "../common/requests";
+import { addToCart, getProduct } from "../common/requests";
 import Counter from "../common/components/Counter";
 import Button from "../common/components/Button";
 import Spinner from "../common/components/Spinner";
+import useCounter from "../common/hooks/useCounter";
 
 function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const counterProps = useCounter();
+  const [isAddToCartLoading, setIsAddToCartLoading] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
       setIsLoading(true);
       const { data } = await axios(getProduct(id));
-
       setIsLoading(false);
       setProduct(data);
     };
 
     fetchProduct();
   }, [id]);
+  async function handleAddToCartClick() {
+    setIsAddToCartLoading(true);
+    await axios(addToCart(id, counterProps.count));
+    setIsAddToCartLoading(false);
+  }
 
   if (isLoading) {
     return <Spinner text="Fetching product info" />;
@@ -40,12 +47,9 @@ function ProductPage() {
         <div className="text-3xl mb-4 font-bold">${product?.price}</div>
         <p className="mb-4">{product?.description}</p>
         <div className="mb-2 font-semibold">Quantity</div>
-        <Counter className="mb-4" />
-        <Button
-          className="bg-gray-500 hover:bg-gray-600 m-2 px-2 py-1 focus:outline-none"
-          isRounded
-        >
-          ADD TO CART
+        <Counter className="mb-4" {...counterProps} />
+        <Button className=" m-2" type="primary" isRounded disabled={isAddToCartLoading} onClick={handleAddToCartClick}>
+          {isAddToCartLoading ? "ADDING TO CART" : "ADD TO CART"}
         </Button>
       </div>
     </div>
