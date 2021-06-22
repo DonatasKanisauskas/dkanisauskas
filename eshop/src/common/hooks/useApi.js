@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import Error from "../../error/Error";
 
 const initialState = {
   isLoading: false,
