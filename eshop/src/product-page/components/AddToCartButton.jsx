@@ -15,7 +15,6 @@ function Btn({onClick}) {
 }
 
 function AddToCartButton({ isLoading, onClick }){
-  console.log("rendering");
   if(isLoading) return <LoadingButton />
   else return <Btn onClick={onClick} />
 }

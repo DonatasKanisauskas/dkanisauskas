@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router";
 import Card from "../common/components/Card";
 import { addToCart, getProduct } from "../common/requests";
@@ -7,31 +6,23 @@ import Counter from "../common/components/Counter";
 import Spinner from "../common/components/Spinner";
 import AddToCartButton from "./components/AddToCartButton";
 import useCounter from "../common/hooks/useCounter";
+import useApi from "../common/hooks/useApi";
 
 function ProductPage() {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const counterProps = useCounter();
-  const [isAddToCartLoading, setIsAddToCartLoading] = useState(false);
+  const { data: product, isLoading, call} = useApi();
+  const { isLoading: isAddToCartLoading, call: callAddToCart} = useApi();
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      setIsLoading(true);
-      const { data } = await axios(getProduct(id));
-      setIsLoading(false);
-      setProduct(data);
-    };
+    call(getProduct(id));
+  }, []); //eslint-disable-line
 
-    fetchProduct();
-  }, [id]);
   async function handleAddToCartClick() {
-    setIsAddToCartLoading(true);
-    await axios(addToCart(id, counterProps.count));
-    setIsAddToCartLoading(false);
+    callAddToCart(addToCart(id, counterProps.count));
   }
 
-  if (isLoading) {
+  if (isLoading || !product) {
     return <Spinner text="Fetching product info" />;
   }
 
