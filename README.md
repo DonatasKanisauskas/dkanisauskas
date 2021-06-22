@@ -83,3 +83,4 @@ Readme.md update and pull request.
 
 - Created new AddToCartButton component and used it in ProductPage.
 - Created useApi hook.
+- Created Error page and handle error page Api.

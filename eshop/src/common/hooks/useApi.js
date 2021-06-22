@@ -1,5 +1,7 @@
-import axios from "axios";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+import Error from "../../error/Error";
 
 const initialState = {
   isLoading: false,
@@ -8,11 +10,19 @@ const initialState = {
 
 function useApi() {
   const [state, setState] = useState(initialState);
+  const history = useHistory();
 
   async function call(request) {
     setState({ data: null, isLoading: true });
-    const { data } = await axios(request);
-    setState({ data, isLoading: false });
+
+    try {
+      const { data } = await axios(request);
+      setState({ data, isLoading: false });
+    } catch (e) {
+      history.push('/error');
+      // send to error page
+      console.error(e);
+    }
   }
 
   return {

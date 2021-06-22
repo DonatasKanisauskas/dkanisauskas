@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Error from "./error/Error";
 import NavBar from "./nav-bar/NavBar";
 import ProductPage from "./product-page/ProductPage";
 import Products from "./products/Produts";
@@ -14,7 +15,8 @@ function App() {
         <Switch>
           <Route exact path={["/", "/products"]} component={Products} />
           <Route exact path="/vision" component={Vision} />
-          <Route path="/products/:id" component={ProductPage} />
+          <Route exact path="/products/:id" component={ProductPage} />
+          <Route exact path ="/error" component={Error} />
         </Switch>
       </main>
     </Router>
