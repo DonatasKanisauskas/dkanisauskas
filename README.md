@@ -77,4 +77,8 @@ Readme.md update and pull request.
 - Moved Counter state logic to separate hook and used that hook in Product component.
 - Added disabled prop to Buttom component.
 - Change add to cart button loading.
-- lifted state up (loadingDots homework).
+- Lifted state up (loadingDots homework).
+
+## Lesson 9
+
+- Created new AddToCartButton component and used it in ProductPage.

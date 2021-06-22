@@ -4,8 +4,8 @@ import { useParams } from "react-router";
 import Card from "../common/components/Card";
 import { addToCart, getProduct } from "../common/requests";
 import Counter from "../common/components/Counter";
-import Button from "../common/components/Button";
 import Spinner from "../common/components/Spinner";
+import AddToCartButton from "./components/AddToCartButton";
 import useCounter from "../common/hooks/useCounter";
 
 function ProductPage() {
@@ -48,9 +48,7 @@ function ProductPage() {
         <p className="mb-4">{product?.description}</p>
         <div className="mb-2 font-semibold">Quantity</div>
         <Counter className="mb-4" {...counterProps} />
-        <Button className=" m-2" type="primary" isRounded disabled={isAddToCartLoading} onClick={handleAddToCartClick}>
-          {isAddToCartLoading ? "ADDING TO CART" : "ADD TO CART"}
-        </Button>
+        <AddToCartButton isLoading={isAddToCartLoading} onClick={handleAddToCartClick} />
       </div>
     </div>
   );
