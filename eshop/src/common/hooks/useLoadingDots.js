@@ -9,14 +9,12 @@ function useLoadingDots() {
     const intervalId = setInterval(() => {
       setDots((prev) => (prev === "..." ? "" : `${prev}.`));
     }, dotsIntervalInMs);
-    
+
     return () => clearInterval(intervalId);
   }, [dots]);
 
 
-  return {
-    dots
-  }
+  return dots;
 }
 
 export default useLoadingDots;

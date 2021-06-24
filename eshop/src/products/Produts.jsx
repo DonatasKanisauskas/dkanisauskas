@@ -1,37 +1,26 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Spinner from "../common/components/Spinner";
+import useApi from "../common/hooks/useApi";
 import { getProducts } from "../common/requests";
 import ProductCard from "./components/ProductCard";
 
 function Products() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const {data: products, isLoading, call } = useApi();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      setIsLoading(true);
-      const { data } = await axios(getProducts);
+    call(getProducts);
+  }, []); //eslint-disable-line
 
-      setIsLoading(false);
-      setProducts(data);
-    };
-
-    fetchProducts();
-  }, []);
-
-  if (isLoading) {
+  if (isLoading || !products) {
     return <Spinner text="Fetching products" />;
   }
 
   return (
-    <div>
-      <ul className="flex flex-wrap justify-around">
-        {products.map((x) => (
-          <ProductCard key={x.id} id={x.id} image={x.image} price={x.price} title={x.title} />
-        ))}
-      </ul>
-    </div>
+    <ul className="flex flex-wrap justify-around">
+      {products.map((x) => (
+        <ProductCard key={x.id} id={x.id} image={x.image} price={x.price} title={x.title} />
+      ))}
+    </ul>
   );
 }
 
