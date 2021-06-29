@@ -90,4 +90,7 @@ Readme.md update and pull request.
 - Added cart.svg
 - Refarctored NavItem
 - Added CartItem.
-- style CartIcon number.
+- Styled CartIconNo.
+- Created CartProvider and used it in CartIconNo component.
+- Added Cart page.
+- Added refreshData to CartProvider.
