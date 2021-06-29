@@ -5,6 +5,7 @@ function CartInconWithNumber() {
   return (
     <div>
       <CartIcon className="w-8 h-8" />
+      <span className="absolute text-yellow-400 text-xs font-bold top-7 right-2">2</span>
     </div>
   );
 }

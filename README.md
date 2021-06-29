@@ -90,3 +90,4 @@ Readme.md update and pull request.
 - Added cart.svg
 - Refarctored NavItem
 - Added CartItem.
+- style CartIcon number.
