@@ -6,8 +6,6 @@ import { CartContext } from "../../common/providers/CartProvider";
 function CartIconWithNo() {
   const { cart } = useContext(CartContext);
 
-  console.log(cart);
-
   return (
     <>
       <CartIcon className="w-8 h-8" />
