@@ -84,3 +84,13 @@ Readme.md update and pull request.
 - Created new AddToCartButton component and used it in ProductPage.
 - Created useApi hook.
 - Created Error page and handle error page Api.
+
+## Lesson 10
+
+- Added cart.svg
+- Refarctored NavItem
+- Added CartItem.
+- Styled CartIconNo.
+- Created CartProvider and used it in CartIconNo component.
+- Added Cart page.
+- Added refreshData to CartProvider.
